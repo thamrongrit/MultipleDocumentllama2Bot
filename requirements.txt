@@ -5,7 +5,7 @@ sentence_transformers
 streamlit_chat
 streamlit
 faiss-cpu
-tiktoken == 0.5.1
+tiktoken==0.8.1
 ctransformers
 huggingface-hub
 pypdf
