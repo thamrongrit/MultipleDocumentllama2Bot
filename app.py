@@ -65,7 +65,7 @@ def create_conversational_chain(vector_store):
                         #model_type="llama", config={'max_new_tokens': 500, 'temperature': 0.01})
     llm = Replicate(
         streaming = True,
-        model = "replicate/llama-2-70b-chat:58d078176e02c219e11eb4da5a02a7830a283b14cf8f94537af893ccff5ee781", 
+        model = "meta/llama-2-70b-chat:02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3", 
         callbacks=[StreamingStdOutCallbackHandler()],
         input = {"temperature": 0.01, "max_length" :500,"top_p":1})
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
@@ -82,7 +82,7 @@ def main():
     st.title("Multi-Docs ChatBot using llama2 :books:")
     # Initialize Streamlit
     st.sidebar.title("Document Processing")
-    uploaded_files = st.sidebar.file_uploader("Upload files", accept_multiple_files=True)
+    uploaded_files = st.sidebar.file_uploader("Upload files (.pdf . doc. .txt) ", accept_multiple_files=True)
 
 
     if uploaded_files:
